@@ -1,0 +1,153 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: mycustomfont;
+    src: url(moonspace-demo.zip);
+}
+body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    background-color : rgba(0, 0, 0, 0.7);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+}
+
+.navbar nav ul li {
+    margin: 0 20px;
+}
+
+.navbar nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+    margin-right: 50px;
+}
+
+.navbar nav ul li a:hover {
+    color: #ffcc00;
+}
+
+.background-image {
+    background-image: url('https://i.pinimg.com/474x/b3/fb/24/b3fb24b01bb8369921da7516d9a11774.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    animation: FadeIn 1.5s ease-in;
+}
+
+.content {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+.space{
+    padding:20px;
+}
+h1 {
+    font-family: mycustomfont;
+    font-size: 150px;
+}
+
+p {
+    font-size: 34px;
+    font-family: "Spicy Rice", serif;
+    font-style: normal;
+}
+button{
+    border:black 2px solid;
+    border-radius: 20%;
+    padding:15px 25px;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    color:white;
+    text-decoration: none;
+    width:110px;
+    
+}
+
+@keyframes slidefromtop{
+    from{
+        transform: translateX(-200px);
+        opacity: 0;
+    }
+    to{
+        transform: translateX(0);
+        opacity: 1  ;
+    }
+}
+@keyframes FadeIn{
+    from 0%{
+        opacity:0;
+        scale:0.80;
+    }
+    to 100%{
+        opacity:0;
+        scale:1.00;
+    }
+}
+h1{
+animation: slidefromtop 1s ease;    
+
+}
+@keyframes slideinleft{
+    from{
+        transform: translateX(200px);
+    }
+    to{
+        transform: translateX(0);
+    }
+}
+@keyframes fade-down {
+    0%{ 
+        opacity: 0;
+        transform: translateY(-30px)scale(0.9);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0px)scale(1);
+    }
+}
+nav{
+    animation: fade-down 1s;
+   
+}
+p{
+animation: slideinleft 1s ease;
+
+}
+a{
+    text-decoration: none;
+    color:white;
+}
+ h1{
+    font-family: "Spicy Rice", serif;
+    font-weight: 400;
+    font-style: normal; }
+.spotify {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        margin: 10px;
+        
+    }

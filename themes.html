@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    
+    <style>
+        * {
+          margin: 0;
+          padding: 0;
+        }
+      
+        @font-face {
+          font-family: myfont;
+          src: url(moonspace-demo.zip);
+        }
+      
+        body {
+          background-image: url('https://i.pinimg.com/474x/d2/86/57/d2865754e8ebdb2fd15119cea88f1835.jpg');
+          background-size: cover;
+          font-family: 'Arial', sans-serif;
+        }
+      
+        #text {
+          font-family: myfont;
+          margin-top: 10px;
+          padding-top: 20px;
+          color: white;
+          font-size: 30px;
+          text-align: center;
+        }
+      
+        .grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          justify-content: space-around;
+          padding: 60px;
+          margin-left: 30px;
+        }
+      
+        .grid .classitem img {
+          border-radius: 10%;
+          height: 30vh;
+          width: 50vh;
+          padding: 10px;
+          font-size: 100px;
+          animation: fade-up 1s;
+        }
+      
+        video {
+          border-radius: 14%;
+          height: 30vh;
+          width: 50vh;
+          padding: 10px;
+          font-size: 100px;
+          animation: fade-up 1s;
+        }
+      
+        .classitem {
+          font-size: 24px;
+          text-align: center;
+          color: white;
+          margin-bottom: 10px;
+        }
+      
+        button {
+          background-color: black;
+          border: none;
+          color: white;
+          padding: 15px 32px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+        }
+      
+        a {
+          text-decoration: none;
+          color: white;
+          font-size: 25px;
+        }
+      
+        h1 {
+          animation: fade-down 0.5s;
+        }
+      
+        @keyframes fade-down {
+          0% {
+            opacity: 0;
+            transform: translateY(-30px) scale(0.9);
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0px) scale(1);
+          }
+        }
+      
+        @keyframes fade-up {
+          0% {
+            opacity: 0;
+            transform: translateY(40px) scale(0.9);
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0px) scale(1);
+          }
+        }
+      
+        .grid .classitem img:hover {
+          transform: scale(1.1);
+          z-index: 2;
+        }
+      
+        .grid .classitem video:hover {
+          transform: scale(1.1);
+          z-index: 2;
+        }
+      
+        footer {
+          padding: 10px 0;
+          text-align: center;
+        }
+      
+        .footer-container {
+          display: flex;
+          flex-wrap: wrap;
+          color: white;
+          justify-content: space-around;
+          gap: 160px;
+        }
+      
+        .footer-column img {
+          margin: 10px;
+          height: 5vh;
+        }
+      
+        .footer-column a {
+          color: white;
+          text-align: left;
+          text-decoration: none;
+        }
+      
+        #text {
+          font-size: 30px;
+          text-align: center;
+        }
+      
+        p {
+          font-size: 23px;
+          text-align: center;
+          color: white;
+        }
+      
+        @media (max-width: 576px) {
+          #text {
+            font-family: myfont;
+            margin-top: 10px;
+            padding-top: 20px;
+            color: white;
+          }
+          .back{
+            border:black solid 1px;
+            background-color: rgba(0,0,0,0.6);
+            border-radius: 10%;
+            
+            
+          }
+      
+          .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            justify-content: space-around;
+            padding: 90px;
+            margin-left: 0px;
+            margin-right: 0px;
+          }
+      
+          .grid .classitem img {
+            border-radius: 30%;
+            height: 70vh;
+            width: 90vh;
+            padding: 150px;
+            font-size: 150px;
+            animation: fade-up 1s;
+          }
+      
+          video {
+            border-radius: 30%;
+            height: 90vh;
+            width: 110vh;
+            padding: 10px;
+            font-size: 180px;
+            animation: fade-up 1s;
+          }
+      
+          .classitem {
+            font-size: 75px;
+            text-align: center;
+            color: white;
+            margin-bottom: 10px;
+          }
+      
+          button {
+            background-color: black;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 50px;
+          }
+      
+          a {
+            text-decoration: none;
+            color: white;
+            font-size: 25px;
+          }
+      
+          footer {
+            padding: 10px 0;
+            text-align: center;
+            margin-left: 420px;
+            height: 100%;
+            width: 100%;
+          }
+      
+          .footer-container {
+            display: flex;
+            justify-content: space-around;
+            color: white;
+            text-align: center;
+            gap: 60px;
+            margin-left: 100px;
+          }
+      
+          .footer-column img {
+            margin: 10px;
+            height: 5vh;
+          }
+      
+          .footer-column a {
+            color: white;
+            text-align: left;
+            text-decoration: none;
+          }
+      
+          #text {
+            font-size: 70px;
+            text-align: center;
+            margin-left: 40px;
+            margin-top: 100px;
+          }
+      
+          hr {
+            width: 2000vh;
+          }
+      
+          footer p {
+            font-size: 40px;
+            margin-left: 100px;
+            display: flex;
+            justify-content: space-around;
+          }
+      
+          footer h1 {
+            font-size: 50px;
+          }
+        }
+      
+        @media (max-width: 576px) {
+ 
+  #text {
+    font-family: myfont;
+    margin-top: 10px;
+    padding-top: 20px;
+    color: white;
+    font-size: 20px; 
+  }
+
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    padding: 20px;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
+
+  .grid .classitem img {
+    border-radius: 10%;
+    height: 50vh;
+    width: 80vh;
+    padding: 10px;
+    font-size: 80px; 
+    animation: fade-up 1s;
+  }
+
+ 
+  video {
+    border-radius: 0%;
+    height: 50vh;
+    width: 80vh;
+    padding: 10px;
+    font-size: 80px; 
+    animation: fade-up 1s;
+  }
+
+  
+  .classitem {
+    font-size: 30px; 
+    color: white;
+    margin-bottom: 10px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+
+
+  button {
+    background-color: rgba(0,0,0,0.6);
+
+    border: black solid 0.5px;
+    color: rgb(255, 255, 255);
+    padding: 12px 28px; 
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 5pxpx;
+    margin-top: 10px;
+
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px; 
+  }
+
+
+  /* /* footer {
+    padding: 10px 0;
+    text-align: center;
+  }
+
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    color: white;
+    justify-content: center; 
+    gap : 40px;
+  }
+
+  .footer-column img {
+    margin: 10px;
+    height: 4vh;
+  } */
+
+  /* .footer-column a {
+    color: white;
+    text-align: left;
+    text-decoration: none;
+  } */
+
+  footer p {
+    font-size: 18px; 
+    margin-top: 10px;
+  }
+
+  footer h1 {
+    font-size: 22px; 
+  } 
+
+ 
+  hr {
+    width: 100%;
+  }
+}
+
+        @media (min-width: 577px) and (max-width: 1024px) {
+          .grid {
+            grid-template-columns: repeat(2, 1fr);
+            padding: 50px;
+            margin-left: 15px;
+          }
+      
+          .grid .classitem img {
+            height: 40vh;
+            width: 60vh;
+            font-size: 90px;
+          }
+      
+          .classitem {
+            font-size: 20px;
+          }
+    
+           footer .footer-container {
+            gap: 100px;
+            height:50px;A
+          }
+      
+          footer p {
+            font-size: 25px;
+          }
+      
+          footer h1 {
+            font-size: 30px;
+          }
+    
+
+
+        @media (min-width: 1025px) {
+          .grid {
+            grid-template-columns: repeat(3, 1fr);
+            padding: 60px;
+            margin-left: 30px;
+          }
+      
+          .grid .classitem img {
+            height: 30vh;
+            width: 50vh;
+            font-size: 100px;
+          }
+      
+          footer .footer-container {
+            gap: 10px;
+          }
+      
+          footer p {
+            font-size: 10px;
+          }
+      
+          footer h1 {
+            font-size: 5px;
+          }
+        }
+       
+.back-link {
+    position: absolute;
+    top: 10px;
+    left: 4px;
+    border: 1px solid black;
+    font-size: 2rem;  
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    border-radius: 10%;
+    text-decoration: none; 
+    color: white;
+    transition: background-color 0.3s, transform 0.3s;
+}
+.back-link:hover {
+    background-color: #555; 
+    transform: scale(1.1);  
+}
+
+
+.back-link:hover {
+    color: orange; }
+
+      </style>
+       
+</head>
+<body>
+<div class="back">
+  <div class="back">
+    <a href="index.html" class="back-link">
+        < 
+    </a>
+</div>
+
+    
+</div>
+
+
+    <div id="text"><h1>COUNTDOWN THEMES:</h1></div>
+    <div class="grid">
+
+        <div class="classitem">
+          <a href="vacation1.html"><img src="vacation.gif"></a>
+          VACATION
+        </div>
+
+        <div class="classitem">
+           <a href="study.html"><img src="https://wallpapercave.com/wp/wp5161079.jpg">STUDY</a>
+        </div>
+       
+        <div class="classitem">
+           <a href="meditation.html"><img src="https://i.pinimg.com/736x/45/25/e7/4525e77a81f4575dba77d75df6945e55.jpg">MEDITATION </a>
+        </div>
+
+        <div class="classitem">
+            <a href="diwali2.html"><img src="https://i.pinimg.com/originals/68/11/ed/6811ed92fd10a23b852cee4e7d37dcc5.gif"></a>
+            DIWALI
+        </div>
+
+        <div class="classitem">
+            <a href="sleep.html"><img src="https://wallpapercave.com/wp/wp5742980.jpg"></a>SLEEP
+        </div>
+
+        <div class="classitem">
+            <a href="halloween.html"><img src="https://wallpapercave.com/wp/wp13303985.jpg"></a>
+            HALLOWEEN
+        </div>
+      
+        <div class="classitem">
+            <a href="christmas1.html"><img src="https://i.pinimg.com/originals/aa/17/21/aa172126859c19160f3919e8ff71a5f8.gif"></a>
+            CHRISTMAS
+        </div>
+
+        <div class="classitem">
+            <a href="gaming.html"><img src="https://i.pinimg.com/originals/aa/a9/2d/aaa92dfb8b4f18822505574280da331c.gif">GAMING</a>
+            
+        </div>
+        <div class="classitem">
+            <a href="birthday.html"><img src="https://i.pinimg.com/originals/60/7b/0a/607b0aa2fd8d9131050b70181d92b1ae.gif"></a>
+            BIRTHDAY
+        </div>
+    </div>
+
+    <hr>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h1>AIM</h1>
+                <p>We provide the best countdown timers for your events.</p>
+            </div>
+            <div class="footer-column">
+                <h1>CUSTOMER CARE</h1>
+                <p>Email: zmail@countdown.com</p>
+                <p>Phone: 9812345689</p>
+            </div>
+            <div class="footer-column">
+                <h1>Follow Us</h1>
+                <img src="https://img.freepik.com/premium-vector/facebook-logo-vector-icon-logotype-vector-eps_901408-409.jpg"> <a href="https://www.facebook.com/">Facebook</a>
+                <img src="https://cdn-icons-png.flaticon.com/512/2496/2496110.png"><a href="https://x.com/">Twitter</a>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR21SRtolNjDeiw3_iqTw3bKfGcN0TGIpChug&s"> <a href="https://www.instagram.com/">Instagram</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Countdown Inc. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

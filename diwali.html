@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sleep Timer</title>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sleep Timer</title>
+        <style>
+            * {
+                padding: 0px;
+                margin: 0px;
+            }
+    
+            body {
+                background-image: url(https://i.pinimg.com/originals/68/11/ed/6811ed92fd10a23b852cee4e7d37dcc5.gif);
+                height: 100%;
+                width: 100%;
+                background-position: left;
+                background-size: cover;
+                background-repeat: no-repeat;
+                text-align: center;
+                font-family: "Spicy Rice", serif;
+                color: white;
+            }
+    
+            .container {
+                animation: fade-up 1s;
+            }
+    
+            .box1 {
+                text-align: center;
+                margin-top: 25vh;
+                font-size: 50px;
+                border-radius: 50px;
+                width: 50%;
+                height: 100%;
+                margin-left: 40vh;
+            }
+    
+            .box2 {
+                display: flex;
+                justify-content: space-around;
+                padding: 20px;
+                font-size: 25px;
+                text-align: center;
+            }
+    
+            .box3 {
+                display: flex;
+                justify-content: space-around;
+                padding: 20px;
+                text-align: center;
+            }
+    
+            .box3 input {
+                font-size: 20px;
+                text-align: center;
+            }
+    
+            .box4 {
+                display: flex;
+                justify-content: space-around;
+                padding: 40px;
+                font-size: 35px;
+                text-align: center;
+                margin-right: 15px;
+            }
+    
+            .box5 {
+                display: flex;
+                justify-content: space-around;
+                padding: 15px;
+                font-size: 60px;
+                text-align: center;
+            }
+    
+            .btn-primary {
+                border-radius: 15%;
+                background-color: rgba(0, 0, 0, 0.3);
+                border-color: rgba(0, 0, 0, 0.3);
+                color: white;
+            }
+    
+            button a {
+                color: black;
+                text-decoration: none;
+                width: 150px;
+                font-size: 20px;
+                text-align: center;
+                border-radius: 10%;
+                background-color: rgba(0, 0, 0, 0.3);
+            }
+    
+            #div1, #div2, #div3, #div4 {
+                padding: 20px;
+            }
+    
+            @keyframes fade-up {
+                0% {
+                    opacity: 0;
+                    transform: translateY(40px) scale(0.9);
+                }
+                100% {
+                    opacity: 1;
+                    transform: translateY(0px) scale(1);
+                }
+            }
+    
+            @keyframes fade-down {
+                0% {
+                    opacity: 0;
+                    transform: translateY(-30px) scale(0.9);
+                }
+                100% {
+                    opacity: 1;
+                    transform: translateY(0px) scale(1);
+                }
+            }
+    
+            .dropdown {
+                position: fixed;
+                top: 15px;
+                right: 20px;
+            }
+    
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #f1f1f1;
+                min-width: 160px;
+                box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+                z-index: 1;
+                padding: 8px 0;
+                border-radius: 5px;
+                top: 30px;
+                right: 25px;
+            }
+    
+            .dropdown-content a {
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
+    
+            .dropdown-content a:hover {
+                background-color: #ddd;
+            }
+    
+            .material-symbols-outlined {
+                cursor: pointer;
+                font-size: 40px;
+            }
+    
+            .dropdown.active .dropdown-content {
+                display: block;
+            }
+    
+           
+    
+            @media screen and (max-width: 1200px) {
+                .box1 {
+                    font-size: 40px;
+                    margin-left: 20vh;
+                    height: 100%;
+                    width: 100%;
+                }
+                .box5 {
+                    font-size: 50px;
+                }
+                .box2 {
+                    font-size: 22px;
+                }
+                .box3 input {
+                    font-size: 18px;
+                }
+                .box4 {
+                    font-size: 30px;
+                }
+            }
+    
+            @media screen and (max-width: 768px) {
+                .box1 {
+                    font-size: 30px;
+                    width: 80%;
+                    margin-left: 10vh;
+                    height: 100%;
+                    width: 100%;
+                }
+                .box5 {
+                    font-size: 40px;
+                }
+                .box2 {
+                    font-size: 18px;
+                    flex-direction: column;
+                    align-items: center;
+                }
+                .box3 {
+                    flex-direction: column;
+                }
+                .box3 input {
+                    font-size: 16px;
+                    margin-bottom: 10px;
+                }
+                .box4 {
+                    font-size: 25px;
+                    flex-direction: flex;
+                }
+            }
+    
+            @media screen and (max-width: 480px) {
+                .box1 {
+                    font-size: 25px;
+                    width: 100%;
+                    margin-left: 5vh;
+                    height: 100%;
+                }
+                .box5 {
+                    font-size: 30px;
+                }
+                .box2 {
+                    font-size: 16px;
+                }
+                .box3 input {
+                    font-size: 14px;
+                }
+                .box4 {
+                    font-size: 20px;
+                    flex-direction: flex;
+                }
+                .material-symbols-outlined {
+                    font-size: 30px;
+                }
+                .dropdown-content {
+                    top: 50px;
+                    right: 15px;
+                }
+            }
+    
+            @media screen and (max-width: 320px) {
+                .box1 {
+                    font-size: 20px;
+                    width: 90%;
+                    margin-left: 5vh;
+                    height: 100%;
+                    width: 100%;
+                }
+                .box5 {
+                    font-size: 24px;
+                }
+                .box2 {
+                    font-size: 14px;
+                }
+                .box3 input {
+                    font-size: 12px;
+                }
+                .box4 {
+                    font-size: 18px;
+                    flex-direction: flex;
+                }
+                .material-symbols-outlined {
+                    font-size: 28px;
+                }
+            }
+        </style>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Spicy+Rice&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+   
+</head>
+<body>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+    
+    <div class="dropdown">
+        <span class="material-symbols-outlined" onclick="toggleDropdown()">menu</span>
+        <div class="dropdown-content">
+            <a href="index.html">Home</a><hr>
+            <a href="themes.html">Themes</a>
+        </div>
+    </div>
+
+    <script>
+        function toggleDropdown() {
+            const dropdown = document.querySelector('.dropdown');
+            dropdown.classList.toggle('active');
+        }
+        window.onclick = function(event) {
+            const dropdown = document.querySelector('.dropdown');
+            if (!dropdown.contains(event.target)) {
+                dropdown.classList.remove('active');
+            }
+        }
+
+        let countdownTimer;
+        let isRunning = false;
+        let secondsLeft = 0;
+
+        function startTimer() {
+            const dateInput = document.getElementById('birthday').value;
+            const timeInput = document.getElementById('appt').value;
+
+            if (!dateInput || !timeInput) {
+                alert('Please enter both date and time!');
+                return;
+            }
+
+            const targetDate = new Date(`${dateInput}T${timeInput}:00`);
+            const currentTime = new Date();
+            secondsLeft = Math.floor((targetDate - currentTime) / 1000);
+
+            if (secondsLeft <= 0) {
+                alert('The target time must be in the future.');
+                return;
+            }
+
+            isRunning = true;
+            updateCountdown();
+            countdownTimer = setInterval(updateCountdown, 1000);
+        }
+
+        function updateCountdown() {
+            if (secondsLeft <= 0) {
+                clearInterval(countdownTimer);
+                alert('Time is up!');
+                return;
+            }
+
+            const days = Math.floor(secondsLeft / (24 * 60 * 60));
+            const hours = Math.floor((secondsLeft % (24 * 60 * 60)) / 3600);
+            const minutes = Math.floor((secondsLeft % 3600) / 60);
+            const seconds = secondsLeft % 60;
+
+            document.getElementById('div5').textContent = String(days).padStart(2, '0');
+            document.getElementById('div6').textContent = String(hours).padStart(2, '0');
+            document.getElementById('div7').textContent = String(minutes).padStart(2, '0');
+            document.getElementById('div8').textContent = String(seconds).padStart(2, '0');
+
+            secondsLeft--;
+        }
+
+        function stopTimer() {
+            clearInterval(countdownTimer);
+            isRunning = false;
+        }
+
+        function resumeTimer() {
+            if (isRunning) return;
+            countdownTimer = setInterval(updateCountdown, 1000);
+            isRunning = true;
+        }
+
+        function resetTimer() {
+            clearInterval(countdownTimer);
+            isRunning = false;
+            document.getElementById('div5').textContent = '00';
+            document.getElementById('div6').textContent = '00';
+            document.getElementById('div7').textContent = '00';
+            document.getElementById('div8').textContent = '00';
+        }
+    </script>
+
+    <div class="container">
+        <div class="box1">
+            DIWALI
+            <div class="box2">
+                <form>
+                    <label for="birthday">Enter date:</label>
+                    <input type="date" id="birthday" name="birthday"><br>
+                    <label for="appt">Enter time:</label>
+                    <input type="time" id="appt" name="appt">
+                </form>
+            </div>
+            <div class="box4">
+                <div id="div1">Days</div>
+                <div id="div2">Hours</div>
+                <div id="div3">Minutes</div>
+                <div id="div4">Seconds</div>
+            </div>
+            <div class="box5">
+                <div id="div5">00</div>
+                <div id="div6">00</div>
+                <div id="div7">00</div>
+                <div id="div8">00</div>
+            </div>
+            <div class="box3">
+                <input class="btn btn-primary" type="button" value="Start" onclick="startTimer()">
+                <input class="btn btn-primary" type="button" value="Stop" onclick="stopTimer()">
+                <input class="btn btn-primary" type="button" value="Resume" onclick="resumeTimer()">
+                <input class="btn btn-primary" type="button" value="Reset" onclick="resetTimer()">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background-color: #f3f3f3;
+        font-family: Arial, sans-serif;
+    }
+    
+    .container {
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 300px;
+    }
+    
+    h1 {
+        text-align: center;
+        color: #333;
+    }
+    
+    label {
+        display: block;
+        margin: 10px 0 5px;
+    }
+    
+    input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+    
+    button {
+        width: 100%;
+        padding: 10px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    
+    button:hover {
+        background-color: #45a049;
+    }
+    
+    .error-message {
+        color: red;
+        text-align: center;
+        display: none;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sign In</h1>
+        <form id="login-form">
+            <label for="username">Username/Email-id</label>
+            <input type="text" id="username" name="username" required placeholder="Enter your username" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required placeholder="Enter your password" required>
+
+          <button type="submit">Sign In</button>
+            <p id="error-msg" class="error-message"></p>
+        </form>
+    </div>
+
+    <script>
+
+        var ele=document.querySelector("form")
+        let users=JSON.parse(localStorage.getItem("users"))||[]
+        ele.addEventListener("submit",(event)=>{
+            event.preventDefault();
+            let user={}
+            let formData=new FormData(event.target)
+            formData.forEach((e,i)=>{
+                user[i]=e
+
+            })
+           
+               users.push(user)
+
+               localStorage.setItem("users",JSON.stringify(users));
+               window.location.href = "index.html";
+        
+            
+        })
+
+    </script>
+</body>
+</html>

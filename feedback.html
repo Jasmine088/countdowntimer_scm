@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            background-image: url("https://png.pngtree.com/background/20210715/original/pngtree-white-abstract-background-3d-paper-style-v-picture-image_1299356.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+            color: #333;
+            height: 98vh;
+            width: 100%;
+        }
+        table {
+            margin: 0 auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 55vh;
+            margin-top: 50px;
+        }
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+            margin-top: 60px;
+            font-size: 7vh;
+        }
+        td {
+            padding: 10px;
+            font-size: 3vh;
+        }
+        input[type="text"], input[type="password"], input[type="date"], textarea {
+            width: 40vh;
+            height: 4vh;
+            padding: 8px;
+            margin: 4px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        #btn1 {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            margin: 5px 0;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 83vh;
+        }
+        #btn2 {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            margin: 5px 0;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 4vh;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        span {
+            display: flex;
+            margin-top: 5px;
+            font-size: 1.5vh;
+        }
+        p {
+            font-size: 2vh;
+            display: inline;
+        }
+        .message {
+            display: inline-block;
+            width: 100%;
+        }
+        textarea{
+            height: 10vh;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <h1>Feedback</h1>
+        <tr>
+            <td>Username</td>
+            <td><input type="text" id="num1"><span style="color:red" id="err1"></span></td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td><input type="text" id="num5"><span style="color:red" id="err5"></span></td>
+        </tr>
+        <tr>
+            <td>Feedback</td>
+            <td><textarea id="num7"></textarea><span style="color:red" id="err7"></span></td>
+        </tr>
+      
+    </table>
+    <div class="container">
+        <button id="btn1" onclick="submit()">Submit Feedback</button>
+        <button id="btn2" onclick="reset()">Reset</button>
+    </div>
+    <h1 id="res1"></h1>
+    <h1 id="res5"></h1>
+    <h1 id="err1"></h1>
+    <h6 id="res7"></h6>
+
+    <script>
+        function submit() {
+            var e1 = e5 = e7 = 0;
+            var n1 = document.getElementById("num1").value;
+            var n5 = document.getElementById("num5").value;
+            var n7 = document.getElementById("num7").value;
+
+            if (n1 === "") {
+                e1 = 1;
+                document.getElementById("err1").innerHTML = "Please enter username";
+            } else {
+                e1 = 0;
+                document.getElementById("err1").innerHTML = "";
+            }
+            if (n5 === "") {
+                e5 = 1;
+                document.getElementById("err5").innerHTML = "Please enter email";
+            } else {
+                e5 = 0;
+                document.getElementById("err5").innerHTML = "";
+            }
+            if (n7 === "") {
+                e7 = 1;
+                document.getElementById("err7").innerHTML = "Please enter feedback";
+            } else {
+                e7 = 0;
+                document.getElementById("err7").innerHTML = "";
+            }
+        }
+
+        function reset() {
+            document.getElementById("res1").innerHTML = ``;
+            document.getElementById("res5").innerHTML = ``;
+            document.getElementById("res7").innerHTML = ``;
+            document.getElementById("num1").value = "";
+            document.getElementById("num5").value = "";
+            document.getElementById("num7").value = "";
+            document.getElementById("err1").innerHTML = "";
+            document.getElementById("err5").innerHTML = "";
+            document.getElementById("err7").innerHTML = "";
+        }
+    </script>
+</body>
+
+</html>
