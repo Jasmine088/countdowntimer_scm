@@ -1,0 +1,25 @@
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up GCC
+      uses: actions/setup-gcc@v3
+      with:
+        gcc-version: '12'
+    - name: Configure Cache
+      uses: actions/cache@v3
+      with:
+        path: build
+        key: ${{ runner.os }}-build-${{ github.sha }}
+    - name: Build
+      run: |
+        mkdir -p build
+        gcc -Os your_code.c -o build/your_program
+    - name: Strip Executable
+      run: strip build/your_program
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: my-program
+        path: build/your_program
